@@ -13,14 +13,30 @@ this.addEventListener("push", function (e) {
   console.log(JSON.stringify(e.data));
   const options = {
     body: data.body,
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/e/e9/Alexandrine_parakeet_%28Psittacula_eupatria_eupatria%29_male.jpg",
+    // image:
+    //   "https://upload.wikimedia.org/wikipedia/commons/e/e9/Alexandrine_parakeet_%28Psittacula_eupatria_eupatria%29_male.jpg",
     badge: "./zlite_logo.png", // icon
     icon: "./zlite_logo.png", // icon
   };
   console.log({ options });
-  this.registration.showNotification("Zefayar", options);
+  this.registration.showNotification("Zlite", options);
 });
+
+// ******************************************************************************************************
+// this.addEventListener("push", function (e) {
+//   console.log(e.body);
+//   const data = e.data.json();
+//   console.log(JSON.stringify(e.data));
+//   const options = {
+//     body: data.body,
+//     image:
+//       "https://upload.wikimedia.org/wikipedia/commons/e/e9/Alexandrine_parakeet_%28Psittacula_eupatria_eupatria%29_male.jpg",
+//     badge: "./zlite_logo.png", // icon
+//     icon: "./zlite_logo.png", // icon
+//   };
+//   console.log({ options });
+//   this.registration.showNotification("Zefayar", options);
+// });
 
 // ****************************************************************************************************
 

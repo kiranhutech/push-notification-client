@@ -1,5 +1,8 @@
+// const publicVapidKey =
+//   "BCr2JJBJYivpM_QdUNd130Ox0XZVMmU4IJGoJIwcGAGgTALSW8N1qqJrrBll7CIwmSnqQ2BhKUicirigENn0ij0";
+
 const publicVapidKey =
-  "BCr2JJBJYivpM_QdUNd130Ox0XZVMmU4IJGoJIwcGAGgTALSW8N1qqJrrBll7CIwmSnqQ2BhKUicirigENn0ij0";
+  "BEQJUTNXCKKzxs1eQbZeWKP4-gU8UsJAUSszog8zhsmg1gI0IqyKsWU2pb3yaHRuUZrvYmy3Qxcjt5wrU840Kno";
 
 // async function registerServiceWorker() {
 //   const register = await navigator.serviceWorker.register("./worker.js", {
@@ -64,11 +67,23 @@ async function registerServiceWorker() {
     userVisibleOnly: true,
     applicationServerKey: publicVapidKey,
   });
-  console.log("222222222222", { subscription });
 
-  await fetch("http://localhost:3001/subscribe", {
+  console.log(
+    "222222222222",
+    JSON.stringify({
+      subscription: subscription,
+      storeId: "fef10faa-f9bd-4e80-a06b-576a3b3891f2",
+      userId: "fef10faa-f9bd-4e80-a06b-576a3b3891f2",
+    })
+  );
+
+  await fetch("http://192.168.0.110:3334/store/api/v1/webpush/subscribe", {
     method: "POST",
-    body: JSON.stringify(subscription),
+    body: JSON.stringify({
+      subscription: subscription,
+      storeId: "fef10faa-f9bd-4e80-a06b-576a3b3891f2",
+      userId: "fef10faa-f9bd-4e80-a06b-576a3b3891f2",
+    }),
     headers: {
       "Content-Type": "application/json",
     },
